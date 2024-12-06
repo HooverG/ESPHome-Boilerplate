@@ -36,3 +36,7 @@ text_sensor:
   - platform: wifi_info
     ip_address: 
       name: IP - ${friendly_name}
+
+button:
+  - platform: restart
+    name: Restart ${friendly_name}
