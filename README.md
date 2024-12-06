@@ -54,7 +54,7 @@ logger:
 This configuration includes two text sensors:
 
 - **ESPHome Version**: Displays the current version of ESPHome.
-- **WiFi Info**: Shows the IP address of the device.
+- **WiFi Info**: Shows the IP and MAC addresses of the device.
 ```yaml
 text_sensor:
   - platform: version
@@ -63,8 +63,21 @@ text_sensor:
   - platform: wifi_info
     ip_address: 
       name: IP - ${friendly_name}
+    mac_address:
+      name: MAC - ${friendly_name}
+
 ```
 These sensors provide useful information about the device’s status.
+
+### Restart Button
+This configuration adds a restart button to restart the device from Home Assistant or other systems.
+
+```yaml
+button:
+  - platform: restart
+    name: Restart ${friendly_name}
+```
+This allows you to trigger a restart of the device remotely.
 
 ### Customizing the Configuration
 To customize the configuration:
